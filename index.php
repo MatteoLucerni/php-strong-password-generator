@@ -1,3 +1,20 @@
+<?php
+$max_length = 16;
+function getRandomString($max)
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $random_string = '';
+    for ($i = 0; $i < $max; $i++) {
+        $random_index = rand(0, strlen($characters) - 1);
+        $random_string .= $characters[$random_index];
+    }
+
+    var_dump($random_string);
+};
+
+getRandomString($max_length)
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
