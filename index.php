@@ -1,17 +1,6 @@
 <?php
 $max_length = intval($_GET['maxLength']) ?? 0;
-var_dump($max_length);
-function getRandomString($max)
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $random_string = '';
-    for ($i = 0; $i < $max; $i++) {
-        $random_index = rand(0, strlen($characters) - 1);
-        $random_string .= $characters[$random_index];
-    }
-
-    return $random_string;
-};
+require __DIR__ . './includes/functions/getRandomString.php'
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +27,8 @@ function getRandomString($max)
         </form>
         <?php if ($max_length) : ?>
             <div class="result">
-                <h4>Password generata:</h4>
-                <p><?= getRandomString($max_length) ?></p>
+                <h4 class="mb-4">Password generata:</h4>
+                <p class="password"><?= getRandomString($max_length) ?></p>
             </div>
         <?php endif ?>
     </div>

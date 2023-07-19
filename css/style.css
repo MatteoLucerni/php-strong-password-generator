@@ -6,3 +6,7 @@ body{
 label{
     font-size: 1.2rem;
 }
+
+.password{
+    word-wrap: break-word;
+}
