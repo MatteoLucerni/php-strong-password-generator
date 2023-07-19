@@ -65,7 +65,7 @@ if ($max_length && $max_length <= 50) {
                 <label class="form-check-label" for="hasSpecialChars">Special chars</label>
             </div>
             <!-- bottone di invio -->
-            <input class="btn btn-primary mt-3" type="submit" value="GENERA!">
+            <input class="btn btn-primary mt-3" type="submit" value="GENERATE!">
             <hr>
         </form>
         <!-- alert di errore -->

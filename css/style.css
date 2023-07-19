@@ -11,6 +11,10 @@ label{
     word-wrap: break-word;
 }
 
+.form-check > *{
+    cursor: pointer;
+}
+
 .form-check-input{
     margin-top: 7px;
     margin-right: 10px;
