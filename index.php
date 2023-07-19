@@ -7,13 +7,13 @@ $error = '';
 $max_length = $_GET['maxLength'] ?? '';
 
 // funzione per la stringa randomica
-require __DIR__ . '/includes/functions/getRandomString.php';
+require __DIR__ . '/includes/functions/getPassword.php';
 
 // avvio la sessione
 session_start();
 
 // salvo la password generata
-$_SESSION['password'] = getRandomString($max_length, $noRepeat);
+$_SESSION['password'] = getPassword($max_length, $noRepeat);
 
 // validazione dati utente
 if ($max_length && $max_length <= 50) {
@@ -48,10 +48,10 @@ if ($max_length && $max_length <= 50) {
                 <input class="form-check-input" type="checkbox" role="switch" id="noRepeat" name="noRepeat">
                 <label class="form-check-label" for="noRepeat">No character repeat</label>
             </div>
-            <label>Permitted charachters: </label>
+            <label>Permitted charachters (select at least one): </label>
             <!-- lettere -->
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="hasLetters" name="hasLetters">
+                <input class="form-check-input" type="checkbox" role="switch" id="hasLetters" name="hasLetters" checked>
                 <label class="form-check-label" for="hasLetters">Letters</label>
             </div>
             <!-- numeri -->

@@ -1,6 +1,6 @@
 <?php
 
-function getRandomString($max, $noRepeat)
+function getPassword($max, $noRepeat)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $random_string = '';
