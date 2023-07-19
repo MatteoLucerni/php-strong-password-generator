@@ -44,10 +44,27 @@ if ($max_length && $max_length <= 50) {
             <label for="maxLength">Max characters</label><br>
             <input class="input-control mb-3" type="number" name="maxLength" id="maxLength" max="50" required><br>
             <!-- checkbox per non ripetizione -->
-            <div class="form-check form-switch">
+            <div class="form-check form-switch my-4">
                 <input class="form-check-input" type="checkbox" role="switch" id="noRepeat" name="noRepeat">
                 <label class="form-check-label" for="noRepeat">No character repeat</label>
             </div>
+            <label>Permitted charachters: </label>
+            <!-- lettere -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="hasLetters" name="hasLetters">
+                <label class="form-check-label" for="hasLetters">Letters</label>
+            </div>
+            <!-- numeri -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="hasNumbers" name="hasNumbers">
+                <label class="form-check-label" for="hasNumbers">Numbers</label>
+            </div>
+            <!-- caratteri speciali -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="hasSpecialChars" name="hasSpecialChars">
+                <label class="form-check-label" for="hasSpecialChars">Special chars</label>
+            </div>
+            <!-- bottone di invio -->
             <input class="btn btn-primary mt-3" type="submit" value="GENERA!">
             <hr>
         </form>
