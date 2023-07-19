@@ -17,7 +17,7 @@ require __DIR__ . '/includes/functions/getPassword.php';
 // avvio la sessione
 session_start();
 
-// salvo la password generata
+// salvo la password generata se ho almeno un tipo di carattere selezionato
 if ($hasLetters || $hasCapitalLetters || $hasNumbers || $hasSpecialChars) {
     $_SESSION['password'] = getPassword(getCharacters($hasLetters, $hasCapitalLetters, $hasNumbers, $hasSpecialChars), $max_length, $noRepeat);
 }
@@ -30,7 +30,7 @@ if ($max_length && $max_length <= 50 && ($hasLetters || $hasCapitalLetters || $h
     // nel caso il valore sia troppo alto
     $error = 'Inserisci un valore minore o uguale a 50';
 } elseif (isset($_GET['maxLength'])) {
-    // nel caso il valore sia vuoto
+    // nel caso i campi non siano compilati correttamente
     $error = 'Compila i campi correttamente';
 }
 ?>
