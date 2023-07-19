@@ -10,3 +10,8 @@ label{
 .password{
     word-wrap: break-word;
 }
+
+.form-check-input{
+    margin-top: 7px;
+    margin-right: 10px;
+}
