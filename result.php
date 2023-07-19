@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- HEAD -->
 <?php require __DIR__ . '/includes/templates/head.php' ?>
 
 <body>
