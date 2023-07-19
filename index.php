@@ -28,10 +28,10 @@ if ($max_length && $max_length <= 50 && ($hasLetters || $hasCapitalLetters || $h
     header('Location: ./result.php');
 } elseif ($max_length > 50) {
     // nel caso il valore sia troppo alto
-    $error = 'Inserisci un valore minore o uguale a 50';
+    $error = 'Insert a value that is under 50';
 } elseif (isset($_GET['maxLength'])) {
     // nel caso i campi non siano compilati correttamente
-    $error = 'Compila i campi correttamente';
+    $error = 'Fill the form with correct values';
 }
 ?>
 
