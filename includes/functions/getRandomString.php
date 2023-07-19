@@ -4,9 +4,14 @@ function getRandomString($max)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $random_string = '';
-    for ($i = 0; $i < $max; $i++) {
+    while (strlen($random_string) < $max) {
         $random_index = rand(0, strlen($characters) - 1);
-        $random_string .= $characters[$random_index];
+
+        if (str_contains($random_string, $characters[$random_index])) {
+            $random_index = rand(0, strlen($characters) - 1);
+        } else {
+            $random_string .= $characters[$random_index];
+        }
     }
 
     return $random_string;
