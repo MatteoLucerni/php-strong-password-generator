@@ -1,6 +1,11 @@
 <?php
 // prendo la flag per il repeat
 $noRepeat = isset($_GET['noRepeat']);
+// prengo le flag per i tipi di caratteri
+$hasLetters = isset($_GET['hasLetters']);
+$hasCapitalLetters = isset($_GET['hasCapitalLetters']);
+$hasNumbers = isset($_GET['hasNumbers']);
+$hasSpecialChars = isset($_GET['hasSpecialChars']);
 
 $error = '';
 // prendo il valore della maxLength da GET
@@ -13,18 +18,20 @@ require __DIR__ . '/includes/functions/getPassword.php';
 session_start();
 
 // salvo la password generata
-$_SESSION['password'] = getPassword($max_length, $noRepeat);
+if ($hasLetters || $hasCapitalLetters || $hasNumbers || $hasSpecialChars) {
+    $_SESSION['password'] = getPassword(getCharacters($hasLetters, $hasCapitalLetters, $hasNumbers, $hasSpecialChars), $max_length, $noRepeat);
+}
 
 // validazione dati utente
-if ($max_length && $max_length <= 50) {
-    // se va bene faccio il redirect al risultato
+if ($max_length && $max_length <= 50 && ($hasLetters || $hasCapitalLetters || $hasNumbers || $hasSpecialChars)) {
+    // se va bene faccio il redirect al risultat
     header('Location: ./result.php');
 } elseif ($max_length > 50) {
     // nel caso il valore sia troppo alto
     $error = 'Inserisci un valore minore o uguale a 50';
 } elseif (isset($_GET['maxLength'])) {
     // nel caso il valore sia vuoto
-    $error = 'Inserisci un valore valido';
+    $error = 'Compila i campi correttamente';
 }
 ?>
 
@@ -53,6 +60,11 @@ if ($max_length && $max_length <= 50) {
             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="hasLetters" name="hasLetters" checked>
                 <label class="form-check-label" for="hasLetters">Letters</label>
+            </div>
+            <!-- lettere maiuscole -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="hasCapitalLetters" name="hasCapitalLetters">
+                <label class="form-check-label" for="hasCapitalLetters">Capital letters</label>
             </div>
             <!-- numeri -->
             <div class="form-check form-switch">
