@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require './includes/templates/head.php' ?>
+<?php require __DIR__ . '/includes/templates/head.php' ?>
 
 <body>
     <div class="container my-5 border border-info p-5">
