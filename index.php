@@ -49,7 +49,8 @@ if ($max_length && $max_length <= 50 && ($hasLetters || $hasCapitalLetters || $h
             <hr>
             <!-- input numero massimo caratteri -->
             <label for="maxLength">Max characters</label><br>
-            <input class="input-control mb-3" type="number" name="maxLength" id="maxLength" max="50" required><br>
+            <input class="input-control mb-3" type="number" name="maxLength" id="maxLength" max="50" required>
+            <span class="ms-3">INFO: it depends also on availabe number of characters based on filters</span>
             <!-- checkbox per non ripetizione -->
             <div class="form-check form-switch my-4">
                 <input class="form-check-input" type="checkbox" role="switch" id="noRepeat" name="noRepeat">
