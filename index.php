@@ -1,13 +1,17 @@
 <?php
-$max_length = $_GET['maxLength'] ?? 0;
+$message = '';
+
+$max_length = $_GET['maxLength'] ?? '';
 require __DIR__ . '/includes/functions/getRandomString.php';
 
 session_start();
 
 $_SESSION['password'] = getRandomString($max_length);
 
-if (isset($_GET['maxLength'])) {
+if ($_GET['maxLength'] ?? '') {
     header('Location: ./result.php');
+} elseif (isset($_GET['maxLength'])) {
+    $message = 'Inserisci un valore valido';
 }
 ?>
 
@@ -26,6 +30,11 @@ if (isset($_GET['maxLength'])) {
             <input class="btn btn-primary mt-3" type="submit" value="GENERA!">
             <hr>
         </form>
+        <?php if ($message) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= $message ?>
+            </div>
+        <?php endif ?>
     </div>
 </body>
 
