@@ -1,4 +1,7 @@
 <?php
+// prendo la flag per il repeat
+$noRepeat = isset($_GET['noRepeat']);
+
 $error = '';
 // prendo il valore della maxLength da GET
 $max_length = $_GET['maxLength'] ?? '';
@@ -10,7 +13,7 @@ require __DIR__ . '/includes/functions/getRandomString.php';
 session_start();
 
 // salvo la password generata
-$_SESSION['password'] = getRandomString($max_length);
+$_SESSION['password'] = getRandomString($max_length, $noRepeat);
 
 // validazione dati utente
 if ($max_length && $max_length <= 50) {
