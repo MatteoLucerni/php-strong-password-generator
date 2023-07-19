@@ -10,10 +10,8 @@ function getRandomString($max)
         $random_string .= $characters[$random_index];
     }
 
-    var_dump($random_string);
+    return $random_string;
 };
-
-getRandomString($max_length)
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +36,12 @@ getRandomString($max_length)
             <input class="btn btn-primary mt-3" type="submit" value="GENERA!">
             <hr>
         </form>
+        <?php if ($max_length) : ?>
+            <div class="result">
+                <h4>Password generata:</h4>
+                <p><?= getRandomString($max_length) ?></p>
+            </div>
+        <?php endif ?>
     </div>
 </body>
 
