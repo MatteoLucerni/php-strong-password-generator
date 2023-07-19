@@ -8,7 +8,7 @@ session_start();
 
 $_SESSION['password'] = getRandomString($max_length);
 
-if ($_GET['maxLength'] ?? '') {
+if ($max_length) {
     header('Location: ./result.php');
 } elseif (isset($_GET['maxLength'])) {
     $message = 'Inserisci un valore valido';
