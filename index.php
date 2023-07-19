@@ -1,5 +1,6 @@
 <?php
-$max_length = 16;
+$max_length = intval($_GET['maxLength']) ?? 0;
+var_dump($max_length);
 function getRandomString($max)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -30,10 +31,11 @@ getRandomString($max_length)
 <body>
     <div class="container my-5 p-5 border border-info rounded">
         <h1 class="fw-bold text-center mb-5">STRONG PASSWORD GENERATOR</h1>
-        <form action="#">
+        <form action="">
             <hr>
             <label for="maxLength">Max characters</label><br>
-            <input class="input-control" type="number" name="maxLength" id="maxLength">
+            <input class="input-control" type="number" name="maxLength" id="maxLength"><br>
+            <input class="btn btn-primary mt-3" type="submit" value="GENERA!">
             <hr>
         </form>
     </div>
