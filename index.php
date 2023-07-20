@@ -12,7 +12,7 @@ $error = '';
 $max_length = $_GET['maxLength'] ?? '';
 
 // funzione per la stringa randomica
-require __DIR__ . '/includes/functions/getPassword.php';
+require __DIR__ . '/includes/functions/functions.php';
 
 // avvio la sessione
 session_start();
